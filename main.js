@@ -23,6 +23,7 @@ class App{
             i++
         }
         setElements();
+        console.log('teste');
     }
 }
 
