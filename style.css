@@ -1,0 +1,17 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+.image-container img {
+  width: 100%;
+}
+
+.image-container {
+  width: 60%;
+  margin: auto;
+  /* margin-right: auto;
+  margin-left: auto; */
+  /* border: 1px solid red; */
+}
