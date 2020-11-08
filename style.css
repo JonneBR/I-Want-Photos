@@ -9,9 +9,30 @@
 }
 
 .image-container {
-  width: 60%;
+  position: absolute;
+  width: 90%;
   margin: auto;
-  /* margin-right: auto;
-  margin-left: auto; */
+}
+
+.container {
+  display: flex;
+  height: 50rem;
+  justify-content: center;
+  align-items: center;
   /* border: 1px solid red; */
+}
+
+#image-form {
+  position: relative;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes centerToUP {
+  0% {
+    top: 0%;
+  }
+  100% {
+    top: -350px;
+  }
 }

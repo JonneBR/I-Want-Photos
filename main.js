@@ -1,4 +1,5 @@
 let userInput = document.getElementById('image-form')[0];
+
 const imagesArray = [];
 
 class App{
@@ -7,18 +8,22 @@ class App{
       this.imagesArray = [];
        
       this.formEl = document.getElementById('image-form'); 
+   
 
       this.registerHandlers();
   
     }
     registerHandlers(){
-        this.formEl.onsubmit = event => this.addImagesIntoArray(event);
+        this.formEl.onsubmit = event => {
+            this.formEl.style.animationName = "centerToUP";
+            this.addImagesIntoArray(event);
+        }  
     };
 
     addImagesIntoArray(event){
         event.preventDefault();
         let i = 0;
-        while(i !== 5){
+        while(i !== 1){
             getImagesFromAPI();
             i++
         }
@@ -44,7 +49,7 @@ function setElements(){
                 imgEl.setAttribute('src',image) ;
                 imageContainer.appendChild(imgEl);
             })       
-            console.log('image',imagesArray[1]);
+            console.log('image',imagesArray[0]);
     },3000);
 }
 
