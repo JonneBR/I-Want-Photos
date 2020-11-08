@@ -8,13 +8,13 @@ class App{
       this.imagesArray = [];
        
       this.formEl = document.getElementById('image-form'); 
-   
+      this.iElement = document.getElementsByClassName('fa fa-search')[0];   
 
       this.registerHandlers();
   
     }
     registerHandlers(){
-        this.formEl.onsubmit = event => {
+        this.iElement.onclick = event => {
             this.formEl.style.animationName = "centerToUP";
             this.addImagesIntoArray(event);
         }  
