@@ -15,12 +15,13 @@
 }
 
 .container {
-  background: grey;
+  background: url(bg-img.png);
+  background-size: cover;
   display: flex;
   height: 100vh;
   justify-content: center;
   align-items: center;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 #image-form {
