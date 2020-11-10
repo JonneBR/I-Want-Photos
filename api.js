@@ -1,13 +1,12 @@
-// let callAPIandPushToArray = async() =>{
-//     const imagesArray = [];
-//     const response = await fetch(`https://source.unsplash.com/1600x900/?${userInput.value}`);
-//     // console.log('TESTE',this.userInput.value)
-//     // console.log(response);
-//     imagesArray.push({
-//         imageUrl: response.url,
+ function setElements(imagesArray){
+    setTimeout (function(){
+        this.imageContainer = document.getElementsByClassName("image-container")[0];
+            imagesArray.forEach(image =>{
+                var imgEl = document.createElement("img");
+                imgEl.setAttribute('src',image.imageUrl) ;
+                imageContainer.appendChild(imgEl);
+            })       
+    },3000);
+}
 
-//     }); 
-//     // console.log('array', imagesArray.imageUrl);
-// }
-
-// export default callAPIandPushToArray;
+export default setElements;
