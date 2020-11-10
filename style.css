@@ -18,6 +18,23 @@
   margin: auto;
 }
 
+#spinner {
+  visibility: hidden;
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  border: 8px solid rgba(0, 0, 0, 0.4);
+  border-left-color: white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .container {
   background: url(bg-img.png);
   background-size: cover;
