@@ -1,6 +1,9 @@
+// import setElements from './api.js';
+
+
 let userInput = document.getElementById('image-form')[0];
 
-const imagesArray = [];
+// const imagesArray = [];
 
 class App{
     constructor(){
@@ -24,33 +27,42 @@ class App{
         event.preventDefault();
         let i = 0;
         while(i !== 1){
-            getImagesFromAPI();
+            this.callAPIandPushToArray();
             i++
         }
-        setElements();
-        console.log('teste');
+        setElements(this.imagesArray);
+        // console.log('teste');
     }
+
+    callAPIandPushToArray = async() =>{
+        const response = await fetch(`https://source.unsplash.com/1600x900/?${userInput.value}`);
+        // console.log('TESTE',this.userInput.value)
+        // console.log(response);
+       this.imagesArray.push({
+            imageUrl: response.url,
+    
+        }); 
+        // console.log('array', imagesArray.imageUrl);
+    }
+
+
 }
 
 
-let getImagesFromAPI = async() =>{
-    const response = await fetch(`https://source.unsplash.com/1600x900/?${userInput.value}`);
-    // console.log('TESTE',this.userInput.value)
-    console.log(response);
-    imagesArray.push(response.url); 
-}
 
-function setElements(){
+function setElements(imagesArray){
     setTimeout (function(){
         this.imageContainer = document.getElementsByClassName("image-container")[0];
         console.log(imageContainer);
             imagesArray.forEach(image =>{
                 var imgEl = document.createElement("img");
-                imgEl.setAttribute('src',image) ;
+                imgEl.setAttribute('src',image.imageUrl) ;
                 imageContainer.appendChild(imgEl);
             })       
-            console.log('image',imagesArray[0]);
     },3000);
 }
 
+
 new App();
+
+// export
