@@ -1,4 +1,4 @@
-import setElements from './api.js';
+import setElements from './setElements.js';
 
 class App{
     constructor(){
@@ -20,22 +20,37 @@ class App{
         }  
     };
 
+    getImagesFromAPI = async() => {
+        const response = await fetch(`https://source.unsplash.com/1600x900/?${this.userInput.value}`);
+        this.imagesArray.push({
+            imageUrl: response.url,
+        }); 
+    }
+
+
     async addImages(event){
         event.preventDefault();
-        
-        const response = await fetch (`https://source.unsplash.com/1600x900/?${this.userInput.value}`);
         var i = 0
         while(i !== 1){
-            this.imagesArray.push({
-                imageUrl: response.url,
-            }); 
+            // const response = await fetch (`https://source.unsplash.com/1600x900/?${this.userInput.value}`);
+            // console.log(response);
+            // this.imagesArray.push({
+            //     imageUrl: response.url,
+            // }); 
+            this.getImagesFromAPI();
             i++
+            // console.log(response.url);
+            // console.log(this.imagesArray);
         }
         setElements(this.imagesArray);
     }
     
+    
+   
+
 }
+
+
 
 new App();
 
-// export
