@@ -14,10 +14,20 @@ class App{
     }
     registerHandlers(){
         this.iElement.onclick = event => {
-            this.formEl.style.animationName = "centerToUP";
-            this.spinnerElement = document.getElementById('spinner').style.visibility = "visible";
-            this.addImages(event);
-        }  
+            if(this.formEl.style.animationName == ""){
+                console.log('TA ENTRANDO DE NOVO?');
+                this.formEl.style.animationName = "centerToUP";
+                this.spinnerElement = document.getElementById('spinner').style.visibility = "visible";
+                this.addImages(event);
+            }else{
+                this.imageContainer = document.querySelector("img").remove();
+                this.spinnerElement = document.getElementById('spinner').style.visibility = "visible";
+                // this.addImages(event);
+                // console.log(this.imageContainer);
+            }
+            
+        } 
+         
     };
 
     getImagesFromAPI = async() => {
@@ -25,6 +35,7 @@ class App{
         this.imagesArray.push({
             imageUrl: response.url,
         }); 
+        console.log(this.imagesArray);
     }
 
 
