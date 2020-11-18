@@ -16,11 +16,24 @@
 .image-container {
   position: absolute;
   width: 90%;
-  margin: auto;
+  margin-top: 2rem;
+  /* border: 1px solid green; */
 }
 
 .image-slider {
   display: flex;
+  /* align-content: center; */
+  justify-content: center;
+}
+
+.image-slider .fa-random {
+  font-size: 2rem;
+  visibility: hidden;
+  cursor: pointer;
+}
+
+.image-slider .fa-random:hover {
+  color: white;
 }
 
 #spinner {
@@ -51,10 +64,11 @@
 }
 
 #image-form {
-  width: 70%;
+  width: 90%;
   position: relative;
   animation-duration: 1s;
   animation-fill-mode: forwards;
+  margin-bottom: 2rem;
   /* border: 1px solid red; */
 }
 
@@ -107,5 +121,8 @@
   .image-container {
     /* border: 1px solid red; */
     max-width: 900px;
+  }
+  #image-form {
+    max-width: 70%;
   }
 }
