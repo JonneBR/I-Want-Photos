@@ -21,6 +21,7 @@ class App{
                 this.addImages(event);
             }else{
                 this.imageContainer = document.querySelector("img").remove();
+                console.log('else');
                 this.spinnerElement = document.getElementById('spinner').style.visibility = "visible";
                 // this.addImages(event);
                 // console.log(this.imageContainer);
