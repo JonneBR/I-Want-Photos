@@ -8,23 +8,36 @@ class App{
       this.formEl = document.getElementById('image-form'); 
       this.iElement = document.getElementsByClassName('fa fa-search')[0];  
       this.userInput = document.getElementById('image-form')[0];
+      this.changeImageButton = document.getElementsByClassName("fa fa-random")[0];
 
       this.registerHandlers();
+      this.ShowButtonAndChangeImage();
   
     }
+
+    ShowButtonAndChangeImage(){
+        this.changeImageButton.onclick = event =>{
+        this.changeImageButton.style.visibility = "hidden";
+        this.imageContainer = document.querySelector("img").remove();
+        this.spinnerElement = document.getElementById('spinner').style.visibility = "visible"; 
+        this.imagesArray.pop();
+        this.addImages(event);
+        }
+
+    }
+
+
+
     registerHandlers(){
         this.iElement.onclick = event => {
             if(this.formEl.style.animationName == ""){
-                console.log('TA ENTRANDO DE NOVO?');
                 this.formEl.style.animationName = "centerToUP";
-                this.spinnerElement = document.getElementById('spinner').style.visibility = "visible";
+                this.spinnerElement = document.getElementById('spinner').style.visibility = "visible"; 
                 this.addImages(event);
             }else{
                 this.imageContainer = document.querySelector("img").remove();
                 console.log('else');
                 this.spinnerElement = document.getElementById('spinner').style.visibility = "visible";
-                // this.addImages(event);
-                // console.log(this.imageContainer);
             }
             
         } 
@@ -42,27 +55,13 @@ class App{
 
     async addImages(event){
         event.preventDefault();
-        var i = 0
-        while(i !== 1){
-            // const response = await fetch (`https://source.unsplash.com/1600x900/?${this.userInput.value}`);
-            // console.log(response);
-            // this.imagesArray.push({
-            //     imageUrl: response.url,
-            // }); 
+        if(1 == 1){
             this.getImagesFromAPI();
-            i++
-            // console.log(response.url);
-            // console.log(this.imagesArray);
         }
-        setElements(this.imagesArray);
+        setElements(this.imagesArray,this.changeImageButton);
     }
     
-    
-   
-
 }
-
-
 
 new App();
 
