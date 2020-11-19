@@ -12,7 +12,16 @@ class App{
 
       this.registerHandlers();
       this.ShowButtonAndChangeImage();
+    //   this.substituteImageArrayAndButtom();
   
+    }
+
+    substituteImageArrayAndButtom(){
+        this.changeImageButton.style.visibility = "hidden";
+        this.imageContainer = document.querySelector("img").remove();
+        this.imagesArray.pop();
+        this.addImages(event);
+
     }
 
     ShowButtonAndChangeImage(){
@@ -35,7 +44,7 @@ class App{
                 this.spinnerElement = document.getElementById('spinner').style.visibility = "visible"; 
                 this.addImages(event);
             }else{
-                this.imageContainer = document.querySelector("img").remove();
+                this.substituteImageArrayAndButtom();
                 console.log('else');
                 this.spinnerElement = document.getElementById('spinner').style.visibility = "visible";
             }
