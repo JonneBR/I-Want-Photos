@@ -26,11 +26,12 @@ class App{
 
     ShowButtonAndChangeImage(){
         this.changeImageButton.onclick = event =>{
-        this.changeImageButton.style.visibility = "hidden";
-        this.imageContainer = document.querySelector("img").remove();
         this.spinnerElement = document.getElementById('spinner').style.visibility = "visible"; 
-        this.imagesArray.pop();
-        this.addImages(event);
+        this.substituteImageArrayAndButtom();
+        // this.changeImageButton.style.visibility = "hidden";
+        // this.imageContainer = document.querySelector("img").remove();
+        // this.imagesArray.pop();
+        // this.addImages(event);
         }
 
     }
