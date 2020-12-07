@@ -12,7 +12,6 @@ class App{
 
       this.registerHandlers();
       this.ShowButtonAndChangeImage();
-    //   this.substituteImageArrayAndButtom();
   
     }
 
@@ -28,10 +27,6 @@ class App{
         this.changeImageButton.onclick = event =>{
         this.spinnerElement = document.getElementById('spinner').style.visibility = "visible"; 
         this.substituteImageArrayAndButtom();
-        // this.changeImageButton.style.visibility = "hidden";
-        // this.imageContainer = document.querySelector("img").remove();
-        // this.imagesArray.pop();
-        // this.addImages(event);
         }
 
     }
@@ -59,7 +54,7 @@ class App{
         this.imagesArray.push({
             imageUrl: response.url,
         }); 
-        console.log(this.imagesArray);
+        // console.log(this.imagesArray);
     }
 
 

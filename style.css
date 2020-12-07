@@ -74,7 +74,7 @@
 
 #image-form input {
   font-size: 20px;
-  color: #fff;
+  color: white;
   outline: none;
   border: 2px solid white;
   border-radius: 10px;
@@ -86,12 +86,17 @@
   background: rgba(0, 0, 0, 0.3);
 }
 
+::placeholder {
+  color: white;
+}
+
 @keyframes centerToUP {
   0% {
     top: 0%;
   }
   100% {
     top: -350px;
+    /* top: -230px; */
   }
 }
 
@@ -119,10 +124,17 @@
 
 @media (min-width: 900px) {
   .image-container {
-    /* border: 1px solid red; */
     max-width: 900px;
   }
   #image-form {
     max-width: 70%;
+  }
+  @keyframes centerToUP {
+    0% {
+      top: 0%;
+    }
+    100% {
+      top: -350px;
+    }
   }
 }
